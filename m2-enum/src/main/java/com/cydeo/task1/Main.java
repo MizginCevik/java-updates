@@ -42,5 +42,14 @@ public class Main {
                 break;
         }
 
+        System.out.println("--------------------------------------------------------------------");
+
+        System.out.println("How to retrieve the constant value?");
+        System.out.println(Currency.PENNY.getValue());
+        System.out.println(Currency.QUARTER.getValue());
+
+        //it prints index of constant in enum
+        System.out.println(Currency.QUARTER.ordinal());
+
     }
 }
