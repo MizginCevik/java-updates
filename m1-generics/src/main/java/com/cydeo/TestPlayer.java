@@ -15,5 +15,10 @@ public class TestPlayer {
         jets.addPlayer(joe); //add the player by using the method
         yankees.addPlayer(pat);
         liverpool.addPlayer(beckham);
+
+//        Team<String> brokenTeam = new Team<>("What kind of team is this?");
+//        Team<Integer> t2 = new Team<>("Very weird");
+
+
     }
 }
