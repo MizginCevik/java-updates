@@ -1,4 +1,4 @@
-package com.cydeo;
+package com.cydeo.task1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 public class Team<T extends Player> {
     //T stands for type, -SoccerPlayer, FootballPlayer, BaseballPlayer...
     //It must accept only Player class and subclasses
+    //extend keyword is used for restrict to accept only curtain classes
 
     private String name;
 
@@ -21,11 +22,11 @@ public class Team<T extends Player> {
 
     public boolean addPlayer(T player){
         if(members.contains(player)){
-            //             getName from class
-            System.out.println(((Player)player).getName() + " is already on the team");
+            System.out.println(player.getName() + " is already on the team");
             return false;
         }else{
             members.add(player);
+            //getName from class if I don't extend it to class (public class Team<T>)
             System.out.println(((Player)player).getName() + " is picked for the team" + this.name);
             return true;
         }
