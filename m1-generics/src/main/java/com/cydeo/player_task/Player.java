@@ -1,4 +1,4 @@
-package com.cydeo.task1;
+package com.cydeo.player_task;
 
 public abstract class Player {
 

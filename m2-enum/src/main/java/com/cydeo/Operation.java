@@ -1,4 +1,4 @@
-package com.cydeo.task2;
+package com.cydeo;
 
 public enum Operation {
 

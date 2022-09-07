@@ -1,4 +1,4 @@
-package com.cydeo.task1;
+package com.cydeo.enum_task;
 
 public enum Currency {
     //Enum is a special type of class.
