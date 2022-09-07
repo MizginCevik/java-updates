@@ -1,4 +1,5 @@
 /.idea/
 /java-updates.iml
 /out/
-/m2-enum/target
+/m2-enum/target/
+*/target
