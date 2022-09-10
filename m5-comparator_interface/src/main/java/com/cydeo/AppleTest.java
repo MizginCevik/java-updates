@@ -16,13 +16,34 @@ public class AppleTest {
         inventory.add(new Apple(200,Color.GREEN));
         inventory.add(new Apple(50,Color.RED));
 
-        Comparator<Apple> sortApple = comparing((Apple apple) -> apple.getWeight());
-        inventory.sort(sortApple);
+        //this method is static method, call it through class name
+        //comparing accepts Function Functional Interface
+        //if you want to sort any object property, you can use comparing method
+        Comparator<Apple> sortApple = Comparator.comparing((Apple apple) -> apple.getWeight());
+
+        //you can call the static method with importing
+        Comparator<Apple> sortApple2 = comparing(apple -> apple.getWeight());
+
+        inventory.sort(sortApple2);
         System.out.println(inventory);
 
-
+        //usage of double colon in this case
         inventory.sort(comparing(Apple::getWeight));
         System.out.println(inventory);
+
+        System.out.println("----------------------------------------------------------------------------");
+
+        //Reversed
+        inventory.sort(comparing(Apple::getWeight).reversed());
+        System.out.println(inventory);
+
+        System.out.println("----------------------------------------------------------------------------");
+
+        //Chaining
+        inventory
+                .sort(comparing(Apple::getWeight)
+                        .reversed()
+                        .thenComparing(Apple::getColor));
 
 
     }
