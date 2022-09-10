@@ -11,21 +11,28 @@ public class Main {
         List<Integer> list = Arrays.asList(10,0,15,5,20);
         System.out.println(list);
 
-        //Ascending
+        System.out.println("-----------------Ascending-----------------");
         Collections.sort(list);
         System.out.println(list);
 
-        //Descending
-        Collections.sort(list,new MyComparator());
+        System.out.println("-----------------Descending-----------------");
+        //Java provides us Comparator Interface. It is used to sort a list of objects based on custom order
+        Collections.sort(list,new MyComparator()); //passing different behavior with using Comparator
         System.out.println(list);
 
-        Collections.sort(list,((o1,o2) -> (o1>o2) ? -1 : (o1<o2) ? 1 : 0));
+        System.out.println("-----------------Descending with lambda expression-----------------");
+        Collections.sort(list, ((o1,o2) -> (o1>o2) ? -1 : (o1<o2) ? 1 : 0));
+        System.out.println(list);
 
-        //Ascending order
+        System.out.println("-----------------Ascending with lambda expression-----------------");
+        Collections.sort(list, ((o1,o2) -> (o1<o2) ? -1 : (o1==o2) ? 0 : 1));
+        System.out.println(list);
+
+        System.out.println("-----------------Ascending order with compareTo method-----------------");
         list.sort((o1, o2) -> o1.compareTo(o2));
         System.out.println(list);
 
-        //Descending order
+        System.out.println("-----------------Descending order with compareTo method-----------------");
         list.sort((o2, o1) -> o1.compareTo(o2));
         System.out.println(list);
 
